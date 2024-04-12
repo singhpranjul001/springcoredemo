@@ -17,15 +17,16 @@ public class DemoController {
     private Coach myCoach;
     */
 
-    @Autowired
+    /*@Autowired
     public void setCoach(Coach theCoach) {
         myCoach = theCoach;
-    }
-    /*//define a constructor for dependency injection
+    }*/
+
+    //define a constructor for dependency injection
     @Autowired
     public DemoController(Coach theCoach) {
         this.myCoach = theCoach;
-    }*/
+    }
 
     @GetMapping("/dailyworkout")
     public String getDailyWorkout(){
