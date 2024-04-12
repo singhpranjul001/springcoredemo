@@ -10,6 +10,13 @@ public class DemoController {
     //defining a private field for the dependency
     private Coach myCoach;
 
+    /*// This is an example of field injection and we do not need constructors
+    // or setter while using field injection however it is not recommended
+    // as it makes the code harder to unit test
+    @Autowired
+    private Coach myCoach;
+    */
+
     @Autowired
     public void setCoach(Coach theCoach) {
         myCoach = theCoach;
