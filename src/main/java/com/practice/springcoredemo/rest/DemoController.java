@@ -36,7 +36,7 @@ import org.springframework.web.bind.annotation.RestController;
         //private Coach anotherCoach;
 
     @Autowired
-    public DemoController(@Qualifier("cricketCoach") Coach theCoach){
+    public DemoController(@Qualifier("aqua") Coach theCoach){
                           //@Qualifier("trackCoach") Coach theAnotherCoach) {
         System.out.println("In constructor: " + getClass().getSimpleName());
         this.myCoach = theCoach;
