@@ -33,14 +33,14 @@ import org.springframework.web.bind.annotation.RestController;
     public class DemoController {
         //defining a private field for the dependency
         private Coach myCoach;
-        private Coach anotherCoach;
+        //private Coach anotherCoach;
 
     @Autowired
-    public DemoController(@Qualifier("trackCoach") Coach theCoach,
-                          @Qualifier("trackCoach") Coach theAnotherCoach) {
+    public DemoController(@Qualifier("cricketCoach") Coach theCoach){
+                          //@Qualifier("trackCoach") Coach theAnotherCoach) {
         System.out.println("In constructor: " + getClass().getSimpleName());
         this.myCoach = theCoach;
-        this.anotherCoach = theAnotherCoach;
+        //this.anotherCoach = theAnotherCoach;
     }
 
     @GetMapping("/dailyworkout")
@@ -48,8 +48,8 @@ import org.springframework.web.bind.annotation.RestController;
         return myCoach.getDailyWorkout();
     }
 
-    @GetMapping("/check")
+    /*@GetMapping("/check")
         public String checkScope(){
             return "Comparing beans's scope, " + (myCoach == anotherCoach);
-        }
+        }*/
 }
