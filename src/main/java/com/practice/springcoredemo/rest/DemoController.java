@@ -14,18 +14,26 @@ public class DemoController {
     /*// This is an example of field injection and we do not need constructors
     // or setter while using field injection however it is not recommended
     // as it makes the code harder to unit test
+
     @Autowired
     private Coach myCoach;
     */
-
+    //setter injection
     /*@Autowired
     public void setCoach(Coach theCoach) {
         myCoach = theCoach;
     }*/
 
-    //define a constructor for dependency injection
-    @Autowired
+    //Qualifier annotation
+    /*@Autowired
     public DemoController(@Qualifier("cricketCoach") Coach theCoach) {
+        this.myCoach = theCoach;
+    }*/
+
+    //define a constructor for dependency injection
+
+    @Autowired
+    public DemoController( Coach theCoach) {
         this.myCoach = theCoach;
     }
 
